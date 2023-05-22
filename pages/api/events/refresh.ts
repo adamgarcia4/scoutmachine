@@ -10,7 +10,7 @@ export default async function getEventRankings(
   res: NextApiResponse
 ): Promise<void> {
   try {
-		const { year = CURR_YEAR } = req.query;
+    const { year = CURR_YEAR } = req.query;
     console.log(`Refreshing events for ${year}`);
 
     const { data } = await tbaAxios.get<Event[]>(`events/${year}`);
